@@ -1,6 +1,6 @@
 # Knex + Node
 
-Node + Express API using [Knex.js](https://knexjs.org/) and PostgreSQL as database
+Node + Express API using [Knex.js](https://knexjs.org/), PostgreSQL as database and deployment in AWS Lambda
 
 ## Setting up the environment 
 * Run this command to set up the Postgres Server

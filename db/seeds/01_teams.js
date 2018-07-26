@@ -2,11 +2,11 @@ exports.seed = (knex, Promise) => {
   return knex('teams').del()
     .then(() => {
       return knex('teams').insert([
-        {id: 1, name: 'Implementation Team'},
-        {id: 2, name: 'LS Marketing'},
-        {id: 3, name: 'Strategic Initiatives Team'},
-        {id: 4, name: 'Warehouse Partner Analyst'},
-        {id: 5, name: 'Guest'}
+        { name: 'Implementation Team' },
+        { name: 'LS Marketing' },
+        { name: 'Strategic Initiatives Team' },
+        { name: 'Warehouse Partner Analyst' },
+        { name: 'Guest' }
       ])
     })
 }

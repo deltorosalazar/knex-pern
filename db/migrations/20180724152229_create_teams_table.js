@@ -1,4 +1,5 @@
 exports.up = function (knex, Promise) {
+  console.log('holaaa')
   return knex.schema.createTable('teams', function (table) {
     table.increments('id')
     table.string('name').unique()
@@ -7,8 +8,8 @@ exports.up = function (knex, Promise) {
   })
 }
 
-exports.down = (knex, Promise) => {
-  (
-    knex.schema.dropTable('teams')
-  )
+exports.down = function (knex, Promise) {
+  console.log('dude')
+  return knex.schema.dropTable('teams')
 }
+

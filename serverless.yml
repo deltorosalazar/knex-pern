@@ -1,0 +1,26 @@
+service: knex-pern-app
+
+custom:
+  stage: ${opt:stage, self:provider.stage} 
+  environment:
+    MESSAGE:
+      dev: "Development Environment"
+      prod: "Production Environment"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  app:
+    handler: index.handler
+    environment:
+      MESSAGE: ${self:custom.environment.MESSAGE.${self:custom.stage}}
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'  
+
+plugins:
+  - serverless-offline      
