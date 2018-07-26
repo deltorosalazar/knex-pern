@@ -24,3 +24,18 @@ knex migrate:latest
 ````
 knex seed:run
 ````
+
+## Testing the API
+### Local Environment without Serverless
+* This command will allow you to test the API omitting the Serverless Environment Variables
+````
+npm run start
+````
+
+### Local Environment with Serverless
+* This command will allow you to test the API using the Serverless Environment Variables
+````
+npm run sls-offline
+````
+
+## Deploying the API
