@@ -8,10 +8,10 @@ exports.getAll = (req, res, next) => {
 }
 
 exports.store = (req, res, next) => {
-  userService.store()
+  userService.store(req)
     .then((user) => {
       res.status(200).json({
-        user: user
+        user: user[0]
       })
     })
     .catch(error => {

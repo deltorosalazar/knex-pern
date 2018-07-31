@@ -39,3 +39,6 @@ npm run sls-offline
 ````
 
 ## Deploying the API
+````
+sls deploy 
+````

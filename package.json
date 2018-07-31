@@ -6,7 +6,10 @@
   "scripts": {
     "start": "nodemon index.js",
     "sfs-offline": "serverless offline start --stage dev --port 3001",
-    "db": "knex migrate:rollback && knex migrate:latest && knex seed:run"
+    "db": "knex migrate:rollback && knex migrate:latest && knex seed:run",
+    "test": "find ./src/ '*.test.js' | xargs nyc --reporter=text mocha --exit --timeout 10000 -R spec",
+    "test3": "find ./src/ '*.test.js' | xargs mocha --exit -R spec",
+    "coverage": "nyc mocha --exit --timeout 10000"
   },
   "keywords": [
     "knex"
@@ -23,7 +26,14 @@
     "serverless-http": "^1.6.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "mock-knex": "^0.4.2",
     "nodemon": "^1.18.3",
+    "nyc": "^12.0.2",
     "serverless-offline": "^3.25.6",
     "standard": "^11.0.1"
   }

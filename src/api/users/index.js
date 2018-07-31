@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const usersController = require('./controller')
+const userController = require('./UserController')
 
-router.get('/', usersController.getAll)
+router.get('/', userController.getAll)
 
-router.post('/', usersController.store)
+router.post('/', userController.store)
 
-router.put('/:id', usersController.update)
+router.put('/:id', userController.update)
 
-router.delete('/:id', usersController.delete)
+router.delete('/:id', userController.delete)
 
 module.exports = router
